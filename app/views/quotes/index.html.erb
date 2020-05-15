@@ -1,0 +1,9 @@
+<div>
+  <% @quotes.each do |quote| %>
+    <div>
+      <%= simple_format(quote.text) %>
+      <%= quote.title %>
+      <%= quote.name %>
+    </div>
+  <% end %>
+</div>
