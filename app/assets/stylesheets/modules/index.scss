@@ -19,6 +19,7 @@ a {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 3;
 }
 .header__menu {
   display: flex;
@@ -29,7 +30,7 @@ a {
 }
 .header__menu__title {
   line-height: 60px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: bold;
 }
 .header__menu__user {
@@ -39,6 +40,7 @@ a {
 }
 .header__menu__user__select {
   margin-left: 24px;
+  font-size: 10px;
   border: 1px solid #000;
   padding: 8px;
   border-radius: 8px;
@@ -115,9 +117,13 @@ a {
   position: absolute;
   bottom: 5px;
   left: 5px;
+  font-style: italic;
+  font-size: 10px;
 }
 .contents__quote ul {
   float: right;
   margin-right: 12px;
   text-align: right;
+  font-style: italic;
+  font-size: 10px;
 }
