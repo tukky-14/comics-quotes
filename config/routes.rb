@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'quotes/index'
-  get 'quotes/new'
-  get 'quotes/create'
+  devise_for :users
+  root to: 'quotes#index'
 end
