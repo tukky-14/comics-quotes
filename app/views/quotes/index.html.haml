@@ -1,0 +1,14 @@
+%form.form
+  %input.form__text{:placeholder => "投稿を検索する", :type => "text"}/
+  %input.form__btn{:type => "submit", :value => "検索"}/
+.contents
+  - @quotes.each do |quote|
+    .contents__quote
+      .contents__quote__text
+        = simple_format(quote.text)
+      %p.contents__quote__name eiji
+      %ul
+        %li.contents__quote__title
+          = quote.title
+        %li.contents__quote__character
+          = quote.name

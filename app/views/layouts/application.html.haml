@@ -11,12 +11,16 @@
 
     .header
       .header__menu
-        .header__menu__title Comics Quotes
-        .ul.header__menu__user
-          .li.header__menu__user__select マイページ
-          .li.header__menu__user__select ログアウト
-          .li.header__menu__user__select 投稿する
-          .li.header__menu__user__select ログイン
-          .li.header__menu__user__select 新規登録
+        .header__menu__title
+          = link_to  "Comics Quotes", root_path  
+        %ul.header__menu__user
+          %li.header__menu__user__select マイページ
+          %li.header__menu__user__select ログアウト
+          %li.header__menu__user__select
+            = link_to  "投稿する", new_quote_path
+          %li.header__menu__user__select
+            = link_to  "ログイン", user_session_path
+          %li.header__menu__user__select
+            = link_to  "新規登録", new_user_registration_path
 
     = yield
