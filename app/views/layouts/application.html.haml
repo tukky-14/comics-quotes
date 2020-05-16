@@ -13,14 +13,20 @@
       .header__menu
         .header__menu__title
           = link_to  "Comics Quotes", root_path  
-        %ul.header__menu__user
-          %li.header__menu__user__select マイページ
-          %li.header__menu__user__select ログアウト
-          %li.header__menu__user__select
-            = link_to  "投稿する", new_quote_path
-          %li.header__menu__user__select
-            = link_to  "ログイン", user_session_path
-          %li.header__menu__user__select
-            = link_to  "新規登録", new_user_registration_path
+        - if user_signed_in?
+          %ul.header__menu__user
+            %li.header__menu__user__name
+              = current_user.nickname
+            %li.header__menu__user__select マイページ
+            %li.header__menu__user__select
+              = link_to  "ログアウト", destroy_user_session_path, method: :delete
+            %li.header__menu__user__select
+              = link_to  "投稿する", new_quote_path
+        - else
+          %ul.header__menu__user
+            %li.header__menu__user__select
+              = link_to  "ログイン", user_session_path
+            %li.header__menu__user__select
+              = link_to  "新規登録", new_user_registration_path
 
     = yield

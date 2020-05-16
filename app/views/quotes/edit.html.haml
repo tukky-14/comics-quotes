@@ -1,7 +1,7 @@
 .container
   .quote
     = form_with(model: @quote, local: true) do |f|
-      %h3.quote__post 投稿するッッ！！
+      %h3.quote__post 編集するッッ！！
       = f.text_area :text, placeholder: "名言" , rows: "10", class: "quote__text"
       = f.text_field :title, placeholder: "タイトル", class: "quote__title"
       = f.text_field :name, placeholder: "キャラクター", class: "quote__character"
