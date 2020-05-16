@@ -9,8 +9,14 @@
       %p.contents__quote__name
         -# = quote.user.nickname メソッド定義
       %p
+        = link_to quote_path(quote.id), method: :get  do
+          = icon('fas', 'info-circle', class: "contents__quote__info")
+      %p
+        = link_to edit_quote_path(quote.id) do
+          = icon('fas', 'edit', class: "contents__quote__edit")
+      %p
         = link_to quote_path(quote.id), method: :delete do
-          = icon('fas', 'skull-crossbones', class: "contents__quote__trash")
+          = icon('fas', 'trash', class: "contents__quote__trash")
       %ul
         %li.contents__quote__title
           = quote.title
