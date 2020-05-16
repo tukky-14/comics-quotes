@@ -3,7 +3,7 @@ class QuotesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @quotes = Quote.all
+    @quotes = Quote.includes(:user)
   end
 
   def new
@@ -34,7 +34,7 @@ class QuotesController < ApplicationController
 
   private
   def quote_params
-    params.require(:quote).permit(:text, :title, :name)
+    params.require(:quote).permit(:text, :title, :name).merge(user_id: current_user.id)
   end
 
   def set_quote

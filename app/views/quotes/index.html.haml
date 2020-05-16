@@ -8,7 +8,7 @@
         .contents__quote__text
           = simple_format(quote.text)
         %p.contents__quote__name
-          -# = quote.user.nickname メソッド定義
+          = quote.user.nickname
         %p
           = link_to quote_path(quote.id), method: :get  do
             = icon('fas', 'info-circle', class: "contents__quote__info")
