@@ -17,7 +17,8 @@
           %ul.header__menu__user
             %li.header__menu__user__name
               = current_user.nickname
-            %li.header__menu__user__select マイページ
+            %li.header__menu__user__select
+              = link_to  "マイページ", root_path
             %li.header__menu__user__select
               = link_to  "ログアウト", destroy_user_session_path, method: :delete
             %li.header__menu__user__select

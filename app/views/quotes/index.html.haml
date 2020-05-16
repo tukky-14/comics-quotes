@@ -1,24 +1,25 @@
-%form.form
-  %input.form__text{:placeholder => "投稿を検索する", :type => "text"}/
-  %input.form__btn{:type => "submit", :value => "検索"}/
-.contents
-  - @quotes.each do |quote|
-    .contents__quote
-      .contents__quote__text
-        = simple_format(quote.text)
-      %p.contents__quote__name
-        -# = quote.user.nickname メソッド定義
-      %p
-        = link_to quote_path(quote.id), method: :get  do
-          = icon('fas', 'info-circle', class: "contents__quote__info")
-      %p
-        = link_to edit_quote_path(quote.id) do
-          = icon('fas', 'edit', class: "contents__quote__edit")
-      %p
-        = link_to quote_path(quote.id), method: :delete do
-          = icon('fas', 'trash', class: "contents__quote__trash")
-      %ul
-        %li.contents__quote__title
-          = quote.title
-        %li.contents__quote__character
-          = quote.name
+-# %form.form
+-#   %input.form__text{:placeholder => "投稿を検索する", :type => "text"}/
+-#   %input.form__btn{:type => "submit", :value => "検索"}/
+.container
+  .contents
+    - @quotes.each do |quote|
+      .contents__quote
+        .contents__quote__text
+          = simple_format(quote.text)
+        %p.contents__quote__name
+          -# = quote.user.nickname メソッド定義
+        %p
+          = link_to quote_path(quote.id), method: :get  do
+            = icon('fas', 'info-circle', class: "contents__quote__info")
+        %p
+          = link_to edit_quote_path(quote.id) do
+            = icon('fas', 'edit', class: "contents__quote__edit")
+        %p
+          = link_to quote_path(quote.id), method: :delete do
+            = icon('fas', 'trash', class: "contents__quote__trash")
+        %ul
+          %li.contents__quote__title
+            = quote.title
+          %li.contents__quote__character
+            = quote.name

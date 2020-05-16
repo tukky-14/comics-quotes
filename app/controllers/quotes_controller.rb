@@ -1,5 +1,6 @@
 class QuotesController < ApplicationController
   before_action :set_quote, only: [:edit, :show]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @quotes = Quote.all
@@ -38,5 +39,10 @@ class QuotesController < ApplicationController
 
   def set_quote
     @quote = Quote.find(params[:id])
+  end
+
+  def move_to_index
+    # redirect_to action: :index unless user_signed_in?
+    redirect_to root_path unless user_signed_in?
   end
 end
