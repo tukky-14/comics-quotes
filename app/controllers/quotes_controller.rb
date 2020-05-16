@@ -11,6 +11,11 @@ class QuotesController < ApplicationController
     Quote.create(quote_params)
   end
 
+  def destroy
+    quote = Quote.find(params[:id])
+    quote.destroy
+  end
+
   private
   def quote_params
     params.require(:quote).permit(:text, :title, :name)

@@ -38,6 +38,11 @@ a {
   justify-content: space-between;
   align-items: center;
 }
+.header__menu__user__name {
+  font-size: 16px;
+  padding: 8px;
+  font-weight: bold;
+}
 .header__menu__user__select {
   margin-left: 24px;
   font-size: 10px;
@@ -112,7 +117,9 @@ a {
   border-top: 14px solid #555;
   z-index: 1;
 }
-
+.contents__quote__text{
+  margin-bottom: 12px;
+}
 .contents__quote__name {
   position: absolute;
   bottom: 5px;
@@ -120,6 +127,20 @@ a {
   font-style: italic;
   font-size: 10px;
 }
+.contents__quote__trash {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-style: italic;
+  font-size: 12px;
+  color: red;
+  opacity: 0.5;
+}
+.contents__quote__trash:hover {
+  opacity: 1;
+  font-size: 24px;
+}
+
 .contents__quote ul {
   float: right;
   margin-right: 12px;

@@ -6,7 +6,11 @@
     .contents__quote
       .contents__quote__text
         = simple_format(quote.text)
-      %p.contents__quote__name eiji
+      %p.contents__quote__name
+        -# = quote.user.nickname メソッド定義
+      %p
+        = link_to quote_path(quote.id), method: :delete do
+          = icon('fas', 'skull-crossbones', class: "contents__quote__trash")
       %ul
         %li.contents__quote__title
           = quote.title
