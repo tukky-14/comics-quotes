@@ -1,7 +1,7 @@
--# %form.form
--#   %input.form__text{:placeholder => "投稿を検索する", :type => "text"}/
--#   %input.form__btn{:type => "submit", :value => "検索"}/
 .container
+  %form.form
+    %input.form__text{:placeholder => "投稿を検索する", :type => "text"}/
+    %input.form__btn{:type => "submit", :value => "検索"}/
   .contents
     - @quotes.each do |quote|
       .contents__quote
@@ -16,10 +16,11 @@
           = link_to edit_quote_path(quote.id) do
             = icon('fas', 'edit', class: "contents__quote__edit")
         %p
-          = link_to quote_path(quote.id), method: :delete, data: {confirm: "削除しますか？"} do
+          = link_to quote_path(quote.id), method: :delete, data: {confirm: "アリアリアリアリアリアリアリアリアリアリ？"} do
             = icon('fas', 'trash', class: "contents__quote__trash")
         %ul
           %li.contents__quote__title
             = quote.title
           %li.contents__quote__character
             = quote.name
+    = paginate(@quotes)

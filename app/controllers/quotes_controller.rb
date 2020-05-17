@@ -3,7 +3,7 @@ class QuotesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @quotes = Quote.includes(:user)
+    @quotes = Quote.includes(:user).order("created_at DESC").page(params[:page]).per(10)
   end
 
   def new
@@ -42,7 +42,6 @@ class QuotesController < ApplicationController
   end
 
   def move_to_index
-    # redirect_to action: :index unless user_signed_in?
     redirect_to root_path unless user_signed_in?
   end
 end

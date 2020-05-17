@@ -1,5 +1,5 @@
 .container-show
-  %h3  #{@nickname}さんの全#{@quotes.count}件の投稿 
+  %h3  #{@nickname}さんの全#{current_user.quotes.count}件の投稿 
   - @quotes.each do |quote|
     .contents__quote
       .contents__quote__text
@@ -20,3 +20,4 @@
           = quote.title
         %li.contents__quote__character
           = quote.name
+  = paginate(@quotes)
