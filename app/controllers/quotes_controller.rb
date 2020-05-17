@@ -3,7 +3,8 @@ class QuotesController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @quotes = Quote.includes(:user).order("created_at DESC").page(params[:page]).per(10)
+    @q = Quote.ransack(params[:q])
+    @quotes = @q.result.includes(:user).order("created_at DESC").page(params[:page]).per(10)
   end
 
   def new
