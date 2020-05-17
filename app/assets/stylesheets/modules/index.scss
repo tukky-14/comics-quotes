@@ -65,25 +65,18 @@ a {
 
 /* 検索 */
 /* ------------------------------------ */
-// .form {
-//   width: 60%;
-//   height: 60px;
-//   margin: 80px auto 0;
-//   text-align: center;
-// }
-// .form__text {
-//   width: 30%;
-//   height: 2rem;
-//   border-radius: 5%;
-//   font-size: 1.1rem;
-//   padding: 5px;
-// }
-// .form__btn {
-//   width: 10%;
-//   height: 2rem;
-//   border-radius: 5%;
-//   margin-left: 12px;
-// }
+.form {
+  width: 20%;
+  height: 60px;
+  margin: 0 auto;
+  text-align: center;
+}
+.form__text {
+  width: 100%;
+}
+.form .form__btn {
+  padding: 5px;
+}
 
 /* コンテンツ */
 /* ------------------------------------ */
