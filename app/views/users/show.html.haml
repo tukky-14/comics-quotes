@@ -1,5 +1,5 @@
 .container-show
-  %h3  #{@nickname}さんの投稿一覧
+  %h3  #{@nickname}さんの全#{@quotes.count}件の投稿 
   - @quotes.each do |quote|
     .contents__quote
       .contents__quote__text
