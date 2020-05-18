@@ -8,7 +8,6 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-
     .header
       .header__menu
         .header__menu__title
@@ -29,5 +28,5 @@
               = link_to  "ログイン", user_session_path
             %li.header__menu__user__select
               = link_to  "新規登録", new_user_registration_path
-
+    = render 'layouts/notifications'
     = yield
