@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Sawarabi Mincho', sans-serif;
 }
 
 @mixin quote-icons {
@@ -17,13 +18,20 @@ a {
   text-decoration: none;
 }
 
+body {
+  background-image: image-url("ban.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position:40%; 
+}
+
 
 /* ヘッダー */
 /* ------------------------------------ */
 .header {
   height: 60px;
   width: 100%;
-  // background-color: orange;
   position: fixed;
   top: 0;
   left: 0;
@@ -85,6 +93,11 @@ a {
 
 /* コンテンツ */
 /* ------------------------------------ */
+.cover {
+  background-image: image-url("don.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .contents {
   width: 50%;
   height: calc(100% - 60px);
