@@ -31,6 +31,8 @@ class QuotesController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @quote.comments.includes(:user)
   end
 
   private

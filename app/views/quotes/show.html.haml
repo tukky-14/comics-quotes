@@ -2,7 +2,7 @@
   .contents__quote
     .contents__quote__text
       = simple_format(@quote.text)
-    - if user_signed_in? && current_user.id == quote.user_id
+    - if user_signed_in? && current_user.id == @quote.user_id
       %p
         = link_to edit_quote_path(@quote.id) do
           = icon('fas', 'edit', class: "contents__quote__edit")
@@ -14,5 +14,19 @@
         = @quote.title
       %li.contents__quote__character
         = @quote.name
-  .contents__root
-    = link_to '投稿一覧へ戻るッッ！！', root_path
+  .comment
+    - if current_user
+      = form_with(model: [@quote, @comment], local: true) do |f|
+        = f.text_area :text, value: "", placeholder: "コメントする", rows: "3"
+        = f.submit "送信するッッ！"
+    - else 
+      %p ※コメントの投稿には新規登録/ログインが必要です※
+
+    .comment__posts
+      %h4 < コメント一覧 >
+      - if @comments
+        - @comments.each do |comment|
+          %p
+            = link_to comment.user.nickname, user_path(current_user.id)
+            %span :
+            = comment.text
