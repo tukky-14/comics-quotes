@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: comics-quotes_production
-  username: comics-quotes
-  password: <%= ENV['COMICS-QUOTES_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 10
+  # database: comics-quotes_production
+  # username: comics-quotes
+  # password: <%= ENV['COMICS-QUOTES_DATABASE_PASSWORD'] %>
