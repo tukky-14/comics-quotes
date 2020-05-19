@@ -27,6 +27,6 @@
       - if @comments
         - @comments.each do |comment|
           %p
-            = link_to comment.user.nickname, user_path(current_user.id)
+            = link_to comment.user.nickname, "/users/#{comment.user_id}"
             %span :
             = comment.text
