@@ -1,3 +1,17 @@
+## 概要
+マンガの名言が投稿できるアプリです。
+
+## バージョン
+- macOS Catalina 10.15.5
+- Rails 5.2.4.3
+- Ruby 2.5.1
+- Heroku
+
+## デプロイ情報
+- Heroku URL  
+https://comicsquotes.herokuapp.com/
+
+
 # comic-quotes DB設計
 ## usersテーブル
 |Column|Type|Options|
